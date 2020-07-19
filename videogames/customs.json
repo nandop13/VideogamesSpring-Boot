@@ -3,6 +3,8 @@
     "attributes": {
         "th:text": {},
         "th:src": {},
-        "th:each": {}
+        "th:action": {},
+        "th:each": {},
+        "th:placeholder": {}
     }
 }

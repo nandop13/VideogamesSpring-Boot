@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Centralized Videogames controller.
@@ -68,7 +69,7 @@ public class VideogameController {
      * @return String which contains what is passed to the model. 
      */
     @RequestMapping("/videogamesByName")
-    public String listVideogameByName(String nameToMatch, Model model)
+    public String listVideogameByName(@RequestParam("q") String nameToMatch, Model model)
     {
         final List<Videogame> videogamesByName = videogameService.findByVideogameNameContaining(nameToMatch);
         model.addAttribute("highlightedVideogames", videogamesByName);

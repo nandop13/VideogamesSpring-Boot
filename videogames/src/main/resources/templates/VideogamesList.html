@@ -22,11 +22,17 @@
                 <img src="/images/pacman.png" width="50" height="50" alt="" >
                 VIDEOGAMES LIST
             </a>
+
+            <form th:action="@{/videogamesByName}" class="form-inline my-2 my-lg-0">
+                <!-- IMPORTANT autofocus for the input and th:placeholder to keep the String on the search -->
+                <input autofocus="aurofocus" name="q" class="form-control mr-sm-2" type="search" th:placeholder="${param.q}" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
+            </form>
         </nav>
 
 
         <div class="container mt-4 vg-container-list">
-            <div class="row">
+            <div class="row"> 
                 <!-- First Card -->
                 <div th:each="videogame : ${highlightedVideogames}" class="col-md-3 mb-4">
                     <div class="card">
