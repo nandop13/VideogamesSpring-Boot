@@ -20,7 +20,7 @@
             <!-- IMPORTANT @{} FOR LINKS -->
             <a class="navbar-brand" th:href="@{/}">
                 <img src="/images/pacman.png" width="50" height="50" alt="" >
-                NANDO INC VIDEOGAMES LIST
+                NANDO INC VIDEOGAMES
             </a>
         </nav>
 
@@ -31,18 +31,31 @@
                     <h1>Add a New Videogame</h1>
 
                     <form>
+
                         <div class="form-group">
                             <label for="videogameName">Name</label>
-                            <input type="text" class="form-control" id="videogameName" placeholder="My new videogame name">
+                            <input type="text" class="form-control" id="videogameName" placeholder="New videogame name">
                         </div>
+
                         <div class="form-group">
                             <label for="videogameDescription">Description</label>
                             <textarea  class="form-control" id="videogameDescription" placeholder="This game features references to many real-life elements of the world..."></textarea>
                         </div>
+
                         <div class="form-group">
                             <label for="imageUrl">Imagen URL</label>
                             <input type="text" class="form-control" id="imageUrl" placeholder="www.example.com">
                         </div>
+
+                        <div class="form-group">
+                            <label for="providerName">Provider</label>
+                            <select class="form-control" id="providerName">
+                                <option selected="selected">Select a provider</option>
+                                <!--  th:vale what is set internally to know the provider ID/th:text option to show on the combo-->
+                                <option th:each="provider : ${allProviders}" th:vale="${provider.id}" th:text="${provider.providerName}"> </option>
+                            </select>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Create Videogame</button>
                     </form>
 

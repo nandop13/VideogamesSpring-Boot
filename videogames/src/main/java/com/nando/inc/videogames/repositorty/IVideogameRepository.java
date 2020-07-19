@@ -1,5 +1,6 @@
 package com.nando.inc.videogames.repositorty;
 
+import com.nando.inc.videogames.domain.Provider;
 import com.nando.inc.videogames.domain.Videogame;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,5 +20,5 @@ public interface IVideogameRepository extends JpaRepository<Videogame, Integer> 
 
     //@Query("from Videogame videogame where videogame.videogameName like %?1%")
     List<Videogame> findByVideogameNameContaining(String nameToMatch);
-
+    
 }

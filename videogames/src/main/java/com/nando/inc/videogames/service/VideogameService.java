@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
- * Business Videogame class.
+ * Videogame service class.
  *
  * @author fernando.penaranda
  */
@@ -47,4 +47,5 @@ public class VideogameService {
     public List<Videogame> findByVideogameNameContaining(String nameToMatch) {
         return videogameRepository.findByVideogameNameContaining(nameToMatch);
     }
+    
 }
