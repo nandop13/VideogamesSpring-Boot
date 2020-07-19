@@ -19,8 +19,8 @@
         <nav class="navbar navbar-dark bg-dark">
             <!-- IMPORTANT @{} FOR LINKS -->
             <a class="navbar-brand" th:href="@{/}">
-                <img src="/images/pacman.png" width="50" height="50" alt="" >
-                VIDEOGAMES LIST
+                <img th:src="@{/images/pacman.png}" width="50" height="50" alt="" >
+                NANDO INC VIDEOGAMES LIST
             </a>
 
             <form th:action="@{/videogamesByName}" class="form-inline my-2 my-lg-0">
@@ -32,6 +32,12 @@
 
 
         <div class="container mt-4 vg-container-list">
+            <div class="row"> 
+                <div class="col col-md-12 text-left mb-4">
+                    <a th:href="@{/videogames/add}" class="btn btn-outline-success"> Add Videogames</a>
+                </div>
+            </div>
+
             <div class="row"> 
                 <!-- First Card -->
                 <div th:each="videogame : ${highlightedVideogames}" class="col-md-3 mb-4">

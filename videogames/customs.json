@@ -5,6 +5,7 @@
         "th:src": {},
         "th:action": {},
         "th:each": {},
-        "th:placeholder": {}
+        "th:placeholder": {},
+        "th:href": {}
     }
 }

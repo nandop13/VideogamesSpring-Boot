@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * Centralized Videogames controller.
+ * Centralized controller class to list videogames by different criterion.
  *
  * @author fernando.penaranda
  */
