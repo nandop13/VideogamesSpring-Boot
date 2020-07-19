@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/videogames.css" >
+        <title>NANDO INC VIDEOGAMES</title>
+
+        <!-- add icon link -->
+        <link rel = "icon" href =  
+              "https://cdn2.iconfinder.com/data/icons/videogames-1/32/Videogames_mushroom_1up_videogame-256.png" 
+              type = "image/x-icon"> 
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <!-- IMPORTANT @{} FOR LINKS -->
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="/images/pacman.png" width="50" height="50" alt="" >
+                VIDEOGAMES LIST
+            </a>
+        </nav>
+
+
+        <div class="container mt-4 vg-container-list">
+            <div class="row">
+                <!-- First Card -->
+                <div th:each="videogame : ${highlightedVideogames}" class="col-md-3 mb-4">
+                    <div class="card">
+                        <img th:src="${videogame.urlImage}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 th:text="${videogame.videogameName}" class="card-title"></h5>
+                            <p class="pill-provider-name">
+                                <a th:href="@{/videogamesByProvider(providerId=${videogame.provider.id})}" th:text="${videogame.provider.providerName}" class="badge badge-pill badge-danger"></a>
+                            </p>
+                            <p th:text="${videogame.description}" class="card-text"></p>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            <a href="#" class="btn btn-primary">SEE DETAILS</a>
+                        </div>                        
+                    </div>
+                </div>                
+            </div>   
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

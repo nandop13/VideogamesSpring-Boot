@@ -1,0 +1,12 @@
+.vg-container-list .card img{
+    height: 400px;
+    object-fit: cover;
+}
+
+.pill-provider-name{
+    text-align:center;
+}
+
+.vg-container-list .card {
+    height: 100%;
+}
