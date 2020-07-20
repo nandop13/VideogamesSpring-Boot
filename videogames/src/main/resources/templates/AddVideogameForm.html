@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label for="provider">Provider</label>
                             <select class="form-control" id="provider" th:field="*{provider}">
-                                <!-- <option selected="selected" value="-1">Select a provider</option>
+                                <option selected="selected" value="-1">Select a provider</option>
                                 <!--  th:vale what is set internally to know the provider ID/th:text option to show on the combo-->
                                 <option th:each="provider : ${allProviders}" th:value="${provider.id}" th:text="${provider.providerName}"> </option>
                             </select>

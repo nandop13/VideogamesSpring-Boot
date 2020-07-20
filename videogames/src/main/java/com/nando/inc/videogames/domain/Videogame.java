@@ -67,7 +67,7 @@ public class Videogame {
 
     @Override
     public String toString() {
-        return "Videogame{" + "id=" + id + ", videogameName=" + videogameName + ", description=" + description + ", urlImage=" + urlImage + ", provider=" + provider + '}';
+        return "Videogame{" + "id=" + id + ", videogameName=" + videogameName + ", description=" + description + ", urlImage=" + urlImage + ", provider=" + provider.getId() + '}';
     }
     
 }

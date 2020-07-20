@@ -1,9 +1,12 @@
 package com.nando.inc.videogames.controller;
 
+import com.nando.inc.videogames.domain.Provider;
 import com.nando.inc.videogames.domain.Videogame;
 import com.nando.inc.videogames.service.ProviderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,6 +31,11 @@ public class VideogameCrudController {
         model.addAttribute("videogameObject", new Videogame());
 
         return "AddVideogameForm";
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(Provider.class, providerService);
     }
 
     @PostMapping("/videogames/save")
