@@ -6,6 +6,7 @@
         "th:action": {},
         "th:each": {},
         "th:placeholder": {},
-        "th:href": {}
+        "th:href": {},
+        "th:field": {}
     }
 }

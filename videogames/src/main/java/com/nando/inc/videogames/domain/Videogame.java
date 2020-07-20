@@ -65,4 +65,9 @@ public class Videogame {
         this.provider = provider;
     }
 
+    @Override
+    public String toString() {
+        return "Videogame{" + "id=" + id + ", videogameName=" + videogameName + ", description=" + description + ", urlImage=" + urlImage + ", provider=" + provider + '}';
+    }
+    
 }
