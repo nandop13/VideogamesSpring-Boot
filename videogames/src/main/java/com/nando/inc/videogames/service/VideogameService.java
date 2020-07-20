@@ -15,6 +15,11 @@ public class VideogameService {
 
     private final IVideogameRepository videogameRepository;
 
+    /**
+     * VideogameService constructor which recieves a dependency of videogameRepository.
+     * 
+     * @param videogameRepository IVideogameRepository instance to be set.
+     */
     public VideogameService(IVideogameRepository videogameRepository) {
         this.videogameRepository = videogameRepository;
     }
@@ -47,5 +52,15 @@ public class VideogameService {
     public List<Videogame> findByVideogameNameContaining(String nameToMatch) {
         return videogameRepository.findByVideogameNameContaining(nameToMatch);
     }
-    
+
+    /**
+     * Persists the data regarding videogame object.
+     * 
+     * @param videogame Object to be persisted.
+     * @return Videogame persisted object.
+     */
+    public Videogame saveVideogame(Videogame videogame) {
+        return videogameRepository.save(videogame);
+    }
+
 }

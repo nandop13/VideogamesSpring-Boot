@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 public class Videogame {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String videogameName;

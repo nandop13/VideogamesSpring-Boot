@@ -17,19 +17,37 @@ public class ProviderService extends PropertyEditorSupport {
 
     private final IProviderRepository providerRepository;
 
+    /**
+     * ProviderService constructor which recieves a dependency of providerRepository.
+     * 
+     * @param providerRepository IProviderRepository instance to be set.
+     */
     public ProviderService(IProviderRepository providerRepository) {
         this.providerRepository = providerRepository;
     }
 
+    /**
+     * Gets all providers registred on DB.
+     * 
+     * @return List of all Provider objects.
+     */
     public List<Provider> getAllProviders() {
         return providerRepository.getAllProviders();
     }
 
+    /**
+     * Get the Provider object given an ID.
+     * 
+     * @param text id field as String.
+     * @throws IllegalArgumentException 
+     */
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
         Optional<Provider> provider = this.providerRepository.findById(Integer.parseInt(text));
 
-        this.setValue(provider.get());
+        if (provider.isPresent()) {
+            this.setValue(provider.get());
+        }
     }
 
 }

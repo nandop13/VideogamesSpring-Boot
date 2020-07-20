@@ -3,6 +3,7 @@ package com.nando.inc.videogames.controller;
 import com.nando.inc.videogames.domain.Provider;
 import com.nando.inc.videogames.domain.Videogame;
 import com.nando.inc.videogames.service.ProviderService;
+import com.nando.inc.videogames.service.VideogameService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
@@ -19,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VideogameCrudController {
 
     private final ProviderService providerService;
+    private final VideogameService videogameService;
 
-    public VideogameCrudController(ProviderService providerService) {
+    public VideogameCrudController(ProviderService providerService, VideogameService videogameService) {
         this.providerService = providerService;
+        this.videogameService = videogameService;
     }
 
     @RequestMapping("/videogames/add")
@@ -40,7 +43,7 @@ public class VideogameCrudController {
 
     @PostMapping("/videogames/save")
     public String saveNewVideogame(Videogame videogame) {
-        System.out.println(videogame);
+        videogameService.saveVideogame(videogame);
         return "redirect:/";
     }
 
